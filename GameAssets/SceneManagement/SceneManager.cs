@@ -4,8 +4,10 @@ namespace WaterKat.GameAssets.SceneManagement
 {
     public class SceneManager
     {
-        public bool isActive;
         private Scene currentScene;
+
+        private bool isActive = true;
+        public bool IsActive { get => isActive; }
 
         public SceneManager()
         {
@@ -19,6 +21,10 @@ namespace WaterKat.GameAssets.SceneManagement
         public void Update()
         {
             currentScene = currentScene.Update();
+            if (currentScene is Scenes.Quit)
+            {
+                isActive = false;
+            }
         }
     }
 }

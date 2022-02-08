@@ -8,14 +8,11 @@ namespace WaterKat.DungeonRun
         public static void Main(string[] args)
         {
             SceneManager sceneManager = new SceneManager();
-            bool isRunning = true;
 
-            while(isRunning)
+            while(sceneManager.IsActive)
             {
                 sceneManager.Update();
-                isRunning = sceneManager.isActive;
             }
-            Console.WriteLine("Quitting...");
         }
     }
 }
