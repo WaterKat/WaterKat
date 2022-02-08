@@ -4,6 +4,7 @@ namespace WaterKat.GameAssets.SceneManagement
 {
     public class SceneManager
     {
+        public bool isActive;
         private Scene currentScene;
 
         public SceneManager()

@@ -1,4 +1,5 @@
 ﻿using System;
+using WaterKat.GameAssets.SceneManagement;
 
 namespace WaterKat.DungeonRun
 {
@@ -6,7 +7,15 @@ namespace WaterKat.DungeonRun
     {
         public static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");    
+            SceneManager sceneManager = new SceneManager();
+            bool isRunning = true;
+
+            while(isRunning)
+            {
+                sceneManager.Update();
+                isRunning = sceneManager.isActive;
+            }
+            Console.WriteLine("Quitting...");
         }
     }
 }
