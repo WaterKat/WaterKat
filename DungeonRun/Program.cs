@@ -7,7 +7,7 @@ namespace WaterKat.DungeonRun
     {
         public static void Main(string[] args)
         {
-            SceneManager sceneManager = new SceneManager();
+            SceneManager sceneManager = new SceneManager(new Scenes.Title());
 
             while(sceneManager.IsActive)
             {
