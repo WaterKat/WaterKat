@@ -9,7 +9,11 @@ namespace WaterKat.GameAssets.SceneManagement
 
         public SceneManager()
         {
-            currentScene = new Scene.Start();
+            currentScene = new Scenes.Start();
+        }
+        public SceneManager(Scene _scene)
+        {
+            currentScene = _scene;
         }
 
         public void Update()
