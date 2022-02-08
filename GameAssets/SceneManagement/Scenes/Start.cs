@@ -11,6 +11,7 @@ namespace WaterKat.GameAssets.SceneManagement.Scenes
             Console.WriteLine();
             Console.WriteLine("Hello World!");
             Console.WriteLine("Press enter to quit");
+            Console.ReadLine();
             return new Quit();
         }
     }
