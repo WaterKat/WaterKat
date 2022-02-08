@@ -5,7 +5,10 @@ VisualStudioVersion = 17.0.32112.339
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GameAssets", "GameAssets\GameAssets.csproj", "{FA3F5ACF-9C86-4C28-8855-5C1EB7D915B5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DungeonRun", "DungeonRun\DungeonRun.csproj", "{AF990C19-2062-4AE7-90BA-73B77716FD16}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DungeonRun", "DungeonRun\DungeonRun.csproj", "{AF990C19-2062-4AE7-90BA-73B77716FD16}"
+	ProjectSection(ProjectDependencies) = postProject
+		{FA3F5ACF-9C86-4C28-8855-5C1EB7D915B5} = {FA3F5ACF-9C86-4C28-8855-5C1EB7D915B5}
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
