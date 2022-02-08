@@ -13,6 +13,8 @@ namespace WaterKat.DungeonRun
             {
                 sceneManager.Update();
             }
+            sceneManager.Update();  //This runs Quit Logic.
+
         }
     }
 }
