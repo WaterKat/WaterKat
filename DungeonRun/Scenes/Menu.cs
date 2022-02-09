@@ -20,34 +20,20 @@ namespace WaterKat.DungeonRun.Scenes
             Quit = 4,
         }
 
-        private StringBuilder stringBuilder = new StringBuilder();
-
-        private void OutputString(string _output)
-        {
-            Console.WriteLine(_output);
-        }
-        private string? GetInput()
-        {
-            return Console.ReadLine();
-        }
-
         public override Scene Update()
         {
-            stringBuilder.AppendLine("Pick an option...");
+            IO.Println("Pick an option...");
 
             int optionCount = Enum.GetNames(typeof(MenuOption)).Length;
 
             for (int i = 0; i < optionCount; i++)
             {
-                stringBuilder.Append("[" + i + "] ");
-                stringBuilder.AppendLine(((MenuOption)i).ToString().Replace('_',' '));
+                IO.Print("[" + i + "] ");
+                IO.Println(((MenuOption)i).ToString().Replace('_',' '));
             }
 
-            OutputString(stringBuilder.ToString());
-            stringBuilder.Clear();
-
             int input = -1;
-            bool isValidInput = int.TryParse(GetInput(), out input);
+            bool isValidInput = int.TryParse(IO.GetInput(), out input);
 
             if (!isValidInput)
             {
@@ -75,11 +61,7 @@ namespace WaterKat.DungeonRun.Scenes
 
         private void DisplayErrorPrompt()
         {
-            stringBuilder.AppendLine();
-            stringBuilder.AppendLine("Input was not valid, please enter a valid integer option");
-            stringBuilder.AppendLine();
-            OutputString(stringBuilder.ToString());
-            stringBuilder.Clear();
+            IO.Println("\nInput was not valid, please enter a valid integer option\n");
         }
     }
 }
