@@ -20,7 +20,12 @@ namespace WaterKat.GameAssets.SceneManagement
 
         public void Update()
         {
-            currentScene = currentScene.Update();
+            Scene nextScene = currentScene.Update();
+            if (currentScene != nextScene.previousScene)
+            {
+                nextScene.previousScene = currentScene;
+            }
+            currentScene = nextScene;
             if (currentScene is Scenes.Quit)
             {
                 isActive = false;
