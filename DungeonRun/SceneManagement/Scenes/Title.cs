@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using WaterKat.GameAssets.SceneManagement;
 
-namespace WaterKat.DungeonRun.Scenes
+namespace WaterKat.DungeonRun.SceneManagement.Scenes
 {
     public class Title : Scene
     {

@@ -1,6 +1,6 @@
 ﻿using WaterKat.GameAssets.SceneManagement;
 
-namespace WaterKat.DungeonRun.Scenes
+namespace WaterKat.DungeonRun.SceneManagement.Scenes
 {
     internal class Credits : Scene
     {

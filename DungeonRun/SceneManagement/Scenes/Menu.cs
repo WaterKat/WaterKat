@@ -7,7 +7,7 @@ using WaterKat.GameAssets.SceneManagement;
 using System.Text;
 
 
-namespace WaterKat.DungeonRun.Scenes
+namespace WaterKat.DungeonRun.SceneManagement.Scenes
 {
     public class Menu : Scene
     {

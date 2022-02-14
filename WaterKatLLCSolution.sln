@@ -10,6 +10,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DungeonRun", "DungeonRun\Du
 		{FA3F5ACF-9C86-4C28-8855-5C1EB7D915B5} = {FA3F5ACF-9C86-4C28-8855-5C1EB7D915B5}
 	EndProjectSection
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DungeonRunTests", "DungeonRunTests\DungeonRunTests.csproj", "{DA6E8DC1-36AF-4CEA-AF37-8065A589F078}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -24,6 +26,10 @@ Global
 		{AF990C19-2062-4AE7-90BA-73B77716FD16}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AF990C19-2062-4AE7-90BA-73B77716FD16}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AF990C19-2062-4AE7-90BA-73B77716FD16}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DA6E8DC1-36AF-4CEA-AF37-8065A589F078}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DA6E8DC1-36AF-4CEA-AF37-8065A589F078}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DA6E8DC1-36AF-4CEA-AF37-8065A589F078}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DA6E8DC1-36AF-4CEA-AF37-8065A589F078}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
