@@ -33,7 +33,7 @@ namespace WaterKat.DungeonRun.Scenes
             }
 
             int input = -1;
-            bool isValidInput = int.TryParse(IO.GetInput(), out input);
+            bool isValidInput = IO.GetInt(out input);
 
             if (!isValidInput)
             {
