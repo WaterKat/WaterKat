@@ -4,7 +4,9 @@ namespace WaterKat.GameAssets.SceneManagement
 {
     public abstract class Scene
     {
+        public SceneManager sceneManager;
         public Scene previousScene;
+
         public virtual Scene Update()
         {
             Console.WriteLine("Unimplemented scene is running.");
