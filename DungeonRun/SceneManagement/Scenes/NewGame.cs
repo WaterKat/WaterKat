@@ -1,4 +1,4 @@
-﻿using WaterKat.GameAssets.SceneManagement;
+﻿
 using WaterKat.DungeonRun.SaveManagement;
 
 namespace WaterKat.DungeonRun.SceneManagement.Scenes
@@ -28,7 +28,7 @@ namespace WaterKat.DungeonRun.SceneManagement.Scenes
             }
             else
             {
-                return previousScene;
+                return previousScene ?? new Title();
             }
         }
     }

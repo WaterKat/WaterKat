@@ -1,5 +1,4 @@
-﻿using WaterKat.GameAssets.SceneManagement;
-using WaterKat.DungeonRun.SaveManagement;
+﻿using WaterKat.DungeonRun.SaveManagement;
 
 namespace WaterKat.DungeonRun.SceneManagement.Scenes
 {

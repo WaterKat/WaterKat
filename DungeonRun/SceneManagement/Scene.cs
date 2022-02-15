@@ -6,9 +6,17 @@ using System.Threading.Tasks;
 
 namespace WaterKat.DungeonRun.SceneManagement
 {
-    public abstract class Scene : WaterKat.GameAssets.SceneManagement.Scene
+    public abstract class Scene
     {
-        public new DRSceneManager? sceneManager = null;
-        public new Scene? previousScene = null;
+        public SceneManager? sceneManager = null;
+        public Scene? previousScene = null;
+
+        public virtual Scene Update()
+        {
+            Console.WriteLine("Unimplemented scene is running.");
+            Console.WriteLine("Press enter to continue.");
+            Console.ReadLine();
+            return previousScene != null ? previousScene : new Scenes.Quit();
+        }
     }
 }
