@@ -9,21 +9,7 @@ namespace WaterKat.DungeonRun.SceneManagement.Scenes
             string input;
             bool inputIsCorrect;
 
-            input = IO.GetResponse("You, a lone adventurer, sit near a campfire, your name is ... ", true);
-
-            /*
-            input = "";
-            inputIsCorrect = false;
-            while (!inputIsCorrect)
-            {
-                input = IO.GetInput();
-                IO.Println("");
-                IO.Println("Your name is " + input + " right?");
-                inputIsCorrect = IO.GetYOrN();
-            }
-            */
-
-
+            input = IO.AskForStringWithConfirm("You, a lone adventurer, sit near a campfire, your name is ... ", true);
 
             return this;
         }

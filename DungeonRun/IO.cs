@@ -8,12 +8,20 @@ namespace WaterKat.DungeonRun
 {
     public static class IO
     {
+        #region PrintCommands
         public static void Println() => Console.WriteLine();
 
         public static void Println(string _string) => Console.WriteLine(_string);
 
         public static void Print(string _string) => Console.Write(_string);
+        #endregion
 
+        #region GetCommands
+
+        public static string GetInput()
+        {
+            return Console.ReadLine() ?? "";
+        }
         public static bool GetInt(out int _inputInt)
         {
             string? _input = Console.ReadLine();
@@ -25,25 +33,50 @@ namespace WaterKat.DungeonRun
             return int.TryParse(_input, out _inputInt);
         }
 
-        internal static bool GetYOrN()
+        #endregion
+
+        #region AskForCommands
+
+        #region AskForYesOrNo
+        public static bool AskForYesOrNo()
         {
-            return GetResponse("(y/n)\n", new string[] { "y", "n" }).Equals("y");
+            return AskForString(true,"y", "n").Equals("y");
         }
-
-        public static string GetResponse(string _prompt, params string[] _responseOptions)
+        public static bool AskForYesOrNo(string _prompt)
         {
-            string input = "";
-            bool inputValid = false;
+            return AskForString(_prompt, true, "y", "n").Equals("y");
+        }
+        #endregion
 
-            if ((_responseOptions == null)||(_responseOptions.Length==0))
+        #region AskForString
+        public static string AskForString(bool _displayOptions, params string[] _responseOptions)
+        {
+            if (_responseOptions == null || _responseOptions.Length == 0)
             {
-                IO.Print(_prompt);
                 return IO.GetInput();
             }
 
+            string prompt = "";
+            if (_displayOptions)
+            {
+                prompt = "( ";
+                for (int i = 0; i < _responseOptions.Length; i++)
+                {
+                    prompt += _responseOptions[i];
+                    if (i != _responseOptions.Length - 1)
+                    {
+                        prompt += ", ";
+                    }
+                }
+                prompt += " )\n";
+            }
+
+            string input = "";
+            bool inputValid = false;
+
             while (!inputValid)
             {
-                IO.Print(_prompt);
+                IO.Print(prompt);
                 input = IO.GetInput();
 
                 for (int i = 0; i < _responseOptions.Length; i++)
@@ -60,30 +93,44 @@ namespace WaterKat.DungeonRun
             return input;
         }
 
-        public static string GetResponse(string _prompt,bool _withConfirmation,params string[] _responseOptions)
+        public static string AskForString(string _prompt, bool _displayOptions, params string[] _responseOptions)
         {
-            if (!_withConfirmation)
-                return GetResponse(_prompt, _responseOptions);
+            IO.Print(_prompt);
+            return AskForString(_displayOptions, _responseOptions);
+        }
 
+        public static string AskForStringWithConfirm(string _prompt, bool _displayOptions, params string[] _responseOptions)
+        {
             string input = "";
             bool inputIsCorrect = false;
 
             while (!inputIsCorrect)
             {
-                input = GetResponse(_prompt, _responseOptions);
+                input = AskForString(_prompt, true, _responseOptions);
 
                 IO.Print("You responded \""+input+"\" is that correct? ");
-                inputIsCorrect = GetYOrN();
+                inputIsCorrect = AskForYesOrNo();
             }
 
             return input;
         }
+        #endregion
 
-
-        public static string GetInput()
+        #region AskForInt
+        public static int AskForInt(string _prompt, params int[] _responseOptions)
         {
-            return Console.ReadLine() ?? "";
+            int input = -1;
+            bool validInput = false;
+            while (!validInput)
+            {
+                IO.Print(_prompt);
+                validInput = GetInt(out input);
+            }
+            return input;
         }
+        #endregion
+
+        #endregion
 
         public static void Pause()
         {

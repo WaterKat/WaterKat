@@ -19,29 +19,9 @@ namespace WaterKat.DungeonRun.SceneManagement.Scenes
             }
             IO.Println("Slot: " + availableSlot + " is available");
 
-            string prompt = "Would you like to create a new save? (y/n)";
-            IO.Print(prompt);
-            bool shouldCreateSave = IO.GetYOrN();
-            
-            string[] responses = new string[] { "y", "n" };
-            string input = "";
-            {
-                bool isValidInput = false;
-                while (!isValidInput)
-                {
-                    IO.Println(prompt);
-                    input = IO.GetInput();
-                    for (int i = 0; i < responses.Length; i++)
-                    {
-                        if (responses[i].Equals(input))
-                        {
-                            isValidInput = true;
-                        }
-                    }
-                }
-            }
+            bool shouldCreateSave = IO.AskForYesOrNo("Would you like to create a new save?");
 
-            if (input.Equals("y"))
+            if (shouldCreateSave)
             {
                 SaveManagement.SaveManager.SaveData(availableSlot, new GameData());
                 return new Introduction();
