@@ -45,7 +45,7 @@ namespace WaterKat.DungeonRun.SceneManagement.Scenes
             else
             {
                 IO.Println("Canceling load, going back to Menu");
-                return new Title();
+                return new Menu();
             }
 
             IO.Println();
