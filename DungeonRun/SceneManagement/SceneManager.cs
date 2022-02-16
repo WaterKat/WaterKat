@@ -4,8 +4,8 @@ namespace WaterKat.DungeonRun.SceneManagement
 {
     public class SceneManager
     {
-        public GameData GameData;
-        public int SaveSlot;
+        public GameData GameData = new GameData();
+        public int SaveSlot = -1;
 
         private Scene currentScene;
 
