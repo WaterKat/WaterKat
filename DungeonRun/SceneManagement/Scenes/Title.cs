@@ -11,15 +11,10 @@ namespace WaterKat.DungeonRun.SceneManagement.Scenes
         public override Scene Update()
         {
             IO.Println("WaterKatLLC Apps");
-            IO.Println("WaterKatLLC Apps");
+            IO.Println("Created by: Jacob Vallecillo");
+            IO.Println();
             IO.Println("Initializing...");
             IO.Println();
-            IO.Println(" Welcome to your adventurous Dungeon Run! ");
-            IO.Println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
-            IO.Println(@"   /\    /\  /\    /\  /\  /\      /\    ");
-            IO.Println(@"  /\/\  /\/\/\/\  /\/\/\/\/\/\    /\/\   ");
-            IO.Println(@" /\/\ \/    \/\/\/    \  /    \/\/    \  ");
-            IO.Println(@"/    \/      \   \     \/     /  \     \ ");
 
             return new Menu();   
         }
