@@ -6,13 +6,16 @@ namespace WaterKat.DungeonRun.SceneManagement.Scenes
     {
         public override Scene Update()
         {
+            if (sceneManager == null)
+                return new Quit();
+
             IO.Println("You wish to load a new adventure?");
             int availableSlot = 0;
             List<int> slots = new List<int>();
-            while (SaveManagement.SaveManager.SaveFileExists(availableSlot))
+            while (SaveManager.SaveFileExists(availableSlot))
             {
                 GameData gameData;
-                bool loadSuccess = SaveManagement.SaveManager.LoadData(availableSlot, out gameData);
+                bool loadSuccess = SaveManager.LoadData(availableSlot, out gameData);
                 if (loadSuccess)
                 {
                     IO.Println("[" + availableSlot.ToString() + "] " + gameData.WorldName);
@@ -22,7 +25,8 @@ namespace WaterKat.DungeonRun.SceneManagement.Scenes
             }
             slots.Add(-1);
 
-            int desiredSlot = IO.AskForInt("Please select a save slot.\nSlot: ", slots.ToArray<int>());
+
+            int desiredSlot = IO.AskForInt("Please select a save slot, or enter -1 to cancel load.\nSlot: ", slots.ToArray<int>());
             if (desiredSlot !=-1)
             {
                 bool loadSuccess = SaveManager.LoadData(desiredSlot, out sceneManager.GameData);
@@ -30,7 +34,7 @@ namespace WaterKat.DungeonRun.SceneManagement.Scenes
                 {
                     IO.Println("Uh Oh, there was an error loading you save.");
                     IO.Println();
-                    return previousScene ?? new Title();
+                    return this;
                 }
                 else
                 {
@@ -41,7 +45,7 @@ namespace WaterKat.DungeonRun.SceneManagement.Scenes
             else
             {
                 IO.Println("Canceling load, going back to Menu");
-                return previousScene ?? new Title();
+                return new Title();
             }
 
             IO.Println();
