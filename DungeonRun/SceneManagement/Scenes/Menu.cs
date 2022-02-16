@@ -21,6 +21,12 @@ namespace WaterKat.DungeonRun.SceneManagement.Scenes
 
         public override Scene Update()
         {
+            IO.Println(" Welcome to your adventurous Dungeon Run! ");
+            IO.Println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
+            IO.Println(@"   /\    /\  /\    /\  /\  /\      /\    ");
+            IO.Println(@"  /\/\  /\/\/\/\  /\/\/\/\/\/\    /\/\   ");
+            IO.Println(@" /\/\ \/    \/\/\/    \  /    \/\/    \  ");
+            IO.Println(@"/    \/      \   \     \/     /  \     \ ");
             IO.Println("Pick an option...");
 
             int optionCount = Enum.GetNames(typeof(MenuOption)).Length;
