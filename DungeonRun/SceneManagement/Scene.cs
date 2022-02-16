@@ -8,8 +8,8 @@ namespace WaterKat.DungeonRun.SceneManagement
 {
     public abstract class Scene
     {
-        public SceneManager? sceneManager = null;
-        public Scene? previousScene = null;
+        public SceneManager? sceneManager;
+        public Scene? previousScene;
 
         public virtual Scene Update()
         {
