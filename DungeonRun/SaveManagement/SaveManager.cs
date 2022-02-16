@@ -12,11 +12,12 @@ namespace WaterKat.DungeonRun.SaveManagement
 {
     public static class SaveManager
     {
+        private static string version = "0.0.1";
+
         private static Environment.SpecialFolder rootPath = Environment.SpecialFolder.MyDocuments;
         private static string relativePath = @"\WaterKatLLC\DungeonRun\Saves";
         private static string fileName = "save_";
         private static string fileType = ".drsave";
-
 
         private static string GetSaveDirectory()
         {
