@@ -17,39 +17,40 @@ namespace WaterKat.DungeonRun.SaveManagement
         private static string fileName = "save_";
         private static string fileType = ".drsave";
 
-        private static void CreateSaveDirectory()
+
+        private static string GetSaveDirectory()
         {
             string completeDirectory = Environment.GetFolderPath(rootPath) + relativePath;
+            return completeDirectory;
+        }
+        private static string GetSaveFilePath(int _slot)
+        {
+            string filePath = GetSaveDirectory() + @"\" + fileName + _slot.ToString() + fileType;
+            return filePath;
+        }
 
-            Directory.CreateDirectory(completeDirectory);
+        private static void CreateSaveDirectory()
+        {
+            Directory.CreateDirectory(GetSaveDirectory());
         }
 
         public static bool SaveDirectoryExists()
         {
-            string completeDirectory = Environment.GetFolderPath(rootPath) + relativePath;
-            return Directory.Exists(completeDirectory);
+            return Directory.Exists(GetSaveDirectory());
         }
 
         public static bool SaveFileExists(int _slot)
         {
-            string completeDirectory = Environment.GetFolderPath(rootPath) + relativePath;
-            string filePath = completeDirectory + @"\" + fileName + _slot.ToString() + fileType;
-            return File.Exists(filePath);
+            return File.Exists(GetSaveFilePath(_slot));
         }
 
         private static FileStream CreateSaveFile(int _slot)
         {
-            string completeDirectory = Environment.GetFolderPath(rootPath) + relativePath;
-            string filePath = completeDirectory + @"\" + fileName + _slot.ToString() + fileType;
-
-            return File.Create(filePath);
+            return File.Create(GetSaveFilePath(_slot));
         }
         private static FileStream OpenSaveFile(int _slot)
         {
-            string completeDirectory = Environment.GetFolderPath(rootPath) + relativePath;
-            string filePath = completeDirectory + @"\" + fileName + _slot.ToString() + fileType;
-
-            return File.OpenWrite(filePath);
+            return File.OpenWrite(GetSaveFilePath(_slot));
         }
 
         public static void SaveData(int _slot, GameData _gameData)
@@ -57,19 +58,7 @@ namespace WaterKat.DungeonRun.SaveManagement
             if (!SaveDirectoryExists())
                 CreateSaveDirectory();
 
-            FileStream fileStream = null;
-
-            if (!SaveFileExists(_slot))
-            {
-                fileStream = CreateSaveFile(_slot);
-            }
-            else
-            {
-                fileStream = OpenSaveFile(_slot);
-            }
-
-            string completeDirectory = Environment.GetFolderPath(rootPath) + relativePath;
-            string filePath = completeDirectory + @"\" + fileName + _slot.ToString() + fileType;
+            FileStream fileStream = CreateSaveFile(_slot);
 
             TextWriter writer = null;
             try
@@ -101,13 +90,10 @@ namespace WaterKat.DungeonRun.SaveManagement
                 return false;
             }
 
-            string completeDirectory = Environment.GetFolderPath(rootPath) + relativePath;
-            string filePath = completeDirectory + @"\" + fileName + _slot.ToString() + fileType;
-
             TextReader reader = null;
             try
             {
-                reader = new StreamReader(filePath);
+                reader = new StreamReader(GetSaveFilePath(_slot));
                 string fileContents = reader.ReadToEnd();
 
                 newGameData = JsonConvert.DeserializeObject<GameData>(fileContents);
