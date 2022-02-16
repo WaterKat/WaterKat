@@ -7,6 +7,7 @@ namespace WaterKat.DungeonRun.SceneManagement
         public GameData GameData = new GameData();
         public int SaveSlot = -1;
 
+        private Scene rootScene;
         private Scene currentScene;
 
         private bool isActive = true;
@@ -14,10 +15,12 @@ namespace WaterKat.DungeonRun.SceneManagement
 
         public SceneManager()
         {
-            currentScene = new Scenes.Title();
+            rootScene = new Scenes.Title();
+            currentScene = rootScene;
         }
         public SceneManager(Scene _scene)
         {
+            rootScene = _scene;
             currentScene = _scene;
         }
 
