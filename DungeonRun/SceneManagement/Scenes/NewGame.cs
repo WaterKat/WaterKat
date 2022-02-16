@@ -8,7 +8,7 @@ namespace WaterKat.DungeonRun.SceneManagement.Scenes
         public override Scene Update()
         {
             if (sceneManager == null)
-                return new Quit();
+                return new Reset();
 
             IO.Println("You wish to create a new adventure?");
             int availableSlot = 0;
@@ -32,7 +32,7 @@ namespace WaterKat.DungeonRun.SceneManagement.Scenes
             }
             else
             {
-                return previousScene ?? new Title();
+                return previousScene ?? new Menu();
             }
         }
     }

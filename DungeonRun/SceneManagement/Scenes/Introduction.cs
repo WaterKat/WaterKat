@@ -7,7 +7,7 @@ namespace WaterKat.DungeonRun.SceneManagement.Scenes
         public override Scene Update()
         {
             if (sceneManager == null)
-                return new Title();
+                return new Reset();
 
             string input;
             bool inputIsCorrect;
