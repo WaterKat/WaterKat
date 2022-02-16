@@ -23,7 +23,8 @@ namespace WaterKat.DungeonRun.SceneManagement.Scenes
 
             if (shouldCreateSave)
             {
-                SaveManagement.SaveManager.SaveData(availableSlot, new GameData());
+                sceneManager.GameData = new GameData();
+                SaveManagement.SaveManager.SaveData(availableSlot, sceneManager.GameData);
                 return new Introduction();
             }
             else
