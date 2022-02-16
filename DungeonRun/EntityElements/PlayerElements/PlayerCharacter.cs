@@ -2,7 +2,7 @@
 {
     public class PlayerCharacter
     {
-        public Health Health;
-        public PlayerMetaData MetaData;
+        public Health Health = new Health();
+        public PlayerMetaData MetaData = new PlayerMetaData();
     }
 }
