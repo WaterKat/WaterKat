@@ -7,6 +7,9 @@ namespace WaterKat.DungeonRun.SceneManagement.Scenes
     {
         public override Scene Update()
         {
+            if (sceneManager == null)
+                return new Quit();
+
             IO.Println("You wish to create a new adventure?");
             int availableSlot = 0;
             while (SaveManagement.SaveManager.SaveFileExists(availableSlot))
@@ -24,7 +27,7 @@ namespace WaterKat.DungeonRun.SceneManagement.Scenes
             if (shouldCreateSave)
             {
                 sceneManager.GameData = new GameData();
-                SaveManagement.SaveManager.SaveData(availableSlot, sceneManager.GameData);
+                SaveManager.SaveData(availableSlot, sceneManager.GameData);
                 return new Introduction();
             }
             else
