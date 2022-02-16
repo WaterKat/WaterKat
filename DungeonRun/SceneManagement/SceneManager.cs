@@ -43,6 +43,11 @@ namespace WaterKat.DungeonRun.SceneManagement
             {
                 isActive = false;
             }
+            if (currentScene is Scenes.Reset)
+            {
+                rootScene = new Scenes.Title();
+                currentScene = rootScene;
+            }
         }
     }
 }
