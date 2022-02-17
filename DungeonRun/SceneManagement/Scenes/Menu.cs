@@ -32,25 +32,12 @@ namespace WaterKat.DungeonRun.SceneManagement.Scenes
             IO.SetTextColor(IO.Color.White);
             IO.Println("Pick an option...");
 
-            int optionCount = Enum.GetNames(typeof(MenuOption)).Length;
-
-            for (int i = 0; i < optionCount; i++)
-            {
-                IO.SetTextColor(IO.Color.Cyan);
-                IO.Print("[" + i + "] ");
-                IO.SetTextColor(IO.Color.White);
-                IO.Println(((MenuOption)i).ToString().Replace('_',' '));
-            }
-
             int input = -1;
-            bool isValidInput = IO.GetInt(out input);
-
-            if (!isValidInput)
+            bool isValidInput = false;
+            while (!isValidInput)
             {
-                DisplayErrorPrompt(); 
-                return this;
+                isValidInput = IO.AskForChoice("Please select a menu option...", out input, Enum.GetNames(typeof(MenuOption)));
             }
-
             switch ((MenuOption)input)
             {
                 case MenuOption.New_Game:

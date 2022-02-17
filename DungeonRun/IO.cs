@@ -167,43 +167,35 @@ namespace WaterKat.DungeonRun
 
         #region AskForEnum
 
-        public static bool AskForEnum<T>(string _prompt, out T? _selection, params T[] _responseOptions) where T : Enum
+        public static bool AskForChoice(string _prompt, out int _selection, params string[] _responseOptions) 
         {
             if ((_responseOptions == null) || (_responseOptions.Length < 1))
             {
-                _selection = default(T);
+                _selection = -1;
                 return false;
             }
 
-
             bool validInput = false;
+            int input = -2;
 
-            while (!validInput)
-            {
                 List<int> validOptions = new List<int>() { -1 };
-                IO.Print(_prompt);
+                IO.Println(_prompt);
                 for (int i = 0; i < _responseOptions.Length; i++)
                 {
                     validOptions.Add(i);
                     IO.SetTextColor(Color.Cyan);
                     IO.Print("[" + i.ToString() + "] ");
                     IO.SetTextColor(Color.White);
-                    IO.Print(_responseOptions[i].ToString());
+                    IO.Println(_responseOptions[i].ToString());
                 }
-                int input;
                 validInput = IO.GetInt(out input);
                 if (validInput)
                 {
                     validInput = validOptions.Contains(input);
                 }
-            }
 
-            while (!validInput)
-            {
-
-                validInput = GetInt(out input);
-            }
-            return input;
+            _selection = input;
+            return validInput;
         }
 
         #endregion
