@@ -10,8 +10,10 @@ namespace WaterKat.DungeonRun.SceneManagement.Scenes
     {
         public override Scene Update()
         {
-            Console.WriteLine("Thanks for playing!");
-            Console.WriteLine("Quitting...");
+            IO.Println("Thanks for playing!");
+            IO.SetTextColor(IO.Color.Red);
+            IO.Println("Quitting...");
+            IO.Pause();
             return this;
         }
     }
