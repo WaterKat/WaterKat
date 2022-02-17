@@ -9,11 +9,46 @@ namespace WaterKat.DungeonRun
     public static class IO
     {
         #region PrintCommands
-        public static void Println() => Console.WriteLine();
-
-        public static void Println(string _string) => Console.WriteLine(_string);
-
         public static void Print(string _string) => Console.Write(_string);
+        public static void Println() => Print("\n");
+        public static void Println(string _string) => Print(_string+"\n");
+
+        #endregion
+
+        #region ColorSettings
+        public enum Color
+        {
+            Black,
+            DarkBlue,
+            DarkGreen,
+            DarkCyan,
+            DarkRed,
+            DarkMagenta,
+            DarkYellow,
+            Gray,
+            DarkGray,
+            Blue,
+            Green,
+            Cyan,
+            Red,
+            Magenta,
+            Yellow,
+            White,
+        }
+        public static string GetIOCommand(this Color _this)
+        {
+            return "^C" + ((int)_this).ToString("D2") + " " + _this.ToString();
+        }
+
+        public static void SetTextColor(Color _color)
+        {
+            Console.ForegroundColor = (ConsoleColor)(int)_color;
+        }
+        public static void SetBackgroundColor(Color _color)
+        {
+            Console.BackgroundColor = (ConsoleColor)(int)_color;
+        }
+
         #endregion
 
         #region GetCommands
@@ -130,12 +165,59 @@ namespace WaterKat.DungeonRun
         }
         #endregion
 
+        #region AskForEnum
+
+        public static bool AskForEnum<T>(string _prompt, out T? _selection, params T[] _responseOptions) where T : Enum
+        {
+            if ((_responseOptions == null) || (_responseOptions.Length < 1))
+            {
+                _selection = default(T);
+                return false;
+            }
+
+
+            bool validInput = false;
+
+            while (!validInput)
+            {
+                List<int> validOptions = new List<int>() { -1 };
+                IO.Print(_prompt);
+                for (int i = 0; i < _responseOptions.Length; i++)
+                {
+                    validOptions.Add(i);
+                    IO.SetTextColor(Color.Cyan);
+                    IO.Print("[" + i.ToString() + "] ");
+                    IO.SetTextColor(Color.White);
+                    IO.Print(_responseOptions[i].ToString());
+                }
+                int input;
+                validInput = IO.GetInt(out input);
+                if (validInput)
+                {
+                    validInput = validOptions.Contains(input);
+                }
+            }
+
+            while (!validInput)
+            {
+
+                validInput = GetInt(out input);
+            }
+            return input;
+        }
+
+        #endregion
+
         #endregion
 
         public static void Pause()
         {
             Console.WriteLine("Press enter to continue...");
             Console.ReadLine();
+        }
+        public static void Clear()
+        {
+            Console.Clear();
         }
     }
 }

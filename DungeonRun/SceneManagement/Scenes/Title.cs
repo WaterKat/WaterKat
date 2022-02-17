@@ -15,7 +15,6 @@ namespace WaterKat.DungeonRun.SceneManagement.Scenes
             IO.Println();
             IO.Println("Initializing...");
             IO.Println();
-
             return new Menu();   
         }
     }

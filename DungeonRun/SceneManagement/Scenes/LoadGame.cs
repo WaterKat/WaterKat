@@ -12,17 +12,27 @@ namespace WaterKat.DungeonRun.SceneManagement.Scenes
             IO.Println("You wish to load a new adventure?");
             int availableSlot = 0;
             List<int> slots = new List<int>();
-            while (SaveManager.SaveFileExists(availableSlot))
+            if (SaveManager.SaveFileExists(availableSlot))
             {
-                GameData gameData;
-                bool loadSuccess = SaveManager.LoadData(availableSlot, out gameData);
-                if (loadSuccess)
+                while (SaveManager.SaveFileExists(availableSlot))
                 {
-                    IO.Println("[" + availableSlot.ToString() + "] " + gameData.WorldName);
-                    slots.Add(availableSlot);
-                    availableSlot++;
+                    GameData gameData;
+                    bool loadSuccess = SaveManager.LoadData(availableSlot, out gameData);
+                    if (loadSuccess)
+                    {
+                        IO.Println("[" + availableSlot.ToString() + "] " + gameData.WorldName);
+                        slots.Add(availableSlot);
+                        availableSlot++;
+                    }
                 }
             }
+            else
+            {
+                IO.Println("You have no save files.");
+                IO.Println();
+                return previousScene ?? new Menu();
+            }
+
             slots.Add(-1);
 
 

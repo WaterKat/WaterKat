@@ -21,19 +21,24 @@ namespace WaterKat.DungeonRun.SceneManagement.Scenes
 
         public override Scene Update()
         {
+            IO.SetTextColor(IO.Color.Blue);
             IO.Println(" Welcome to your adventurous Dungeon Run! ");
             IO.Println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
+            IO.SetTextColor(IO.Color.DarkGreen);
             IO.Println(@"   /\    /\  /\    /\  /\  /\      /\    ");
             IO.Println(@"  /\/\  /\/\/\/\  /\/\/\/\/\/\    /\/\   ");
             IO.Println(@" /\/\ \/    \/\/\/    \  /    \/\/    \  ");
             IO.Println(@"/    \/      \   \     \/     /  \     \ ");
+            IO.SetTextColor(IO.Color.White);
             IO.Println("Pick an option...");
 
             int optionCount = Enum.GetNames(typeof(MenuOption)).Length;
 
             for (int i = 0; i < optionCount; i++)
             {
+                IO.SetTextColor(IO.Color.Cyan);
                 IO.Print("[" + i + "] ");
+                IO.SetTextColor(IO.Color.White);
                 IO.Println(((MenuOption)i).ToString().Replace('_',' '));
             }
 
