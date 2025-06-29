@@ -1,66 +1,98 @@
-# 👋 Hi, I'm Jacob Vallecillo
+# Jacob Vallecillo, also known as WaterKat
 
-🎯 **Back-End Developer** • Long Beach, CA  
-💻 Building tools for streamers, real-time systems, and scalable web services.  
-📫 jacob.vallecillo@gmail.com | [GitHub](https://github.com/WaterKat) | [LinkedIn](https://www.linkedin.com/in/jacobvallecillo)
+## Software Engineer
 
----
+I build tools for content creators.
 
-## 🔧 Tech Stack
+Email: <jvallecillo.dev@gmail.com>
 
-**Languages**: TypeScript, Python, SQL, C#  
-**Back-End**: Node.js, Express, OAuth2, WebSockets  
-**Databases**: Supabase, MongoDB, PostgreSQL  
-**Tools**: Docker, Git, Webpack, VSCode  
-**Platforms**: Twitch API, Discord API, StreamElements, VTubeStudio
+GitHub (you're here): [https://github.com/WaterKat](https://github.com/WaterKat)
 
----
+LinkedIn: [https://www.linkedin.com/in/jivallecillo/](https://www.linkedin.com/in/jacobvallecillo)
 
-## 🚀 Featured Project: [AonyxEngine](https://github.com/WaterKat/AonyxEngine) 
+## Content Creation
 
-```IN DEVELOPMENT```
-> A backend system for multi-user creator tools with real-time Twitch and Discord integrations.
+I share my efforts on Twitch, or on my website
 
-- Modular Node.js + Express architecture  
-- OAuth2 flows with AES-256-GCM encryption  
-- Supabase integration with JWT verification  
-- EventSub WebSocket support for Twitch session lifecycle management  
-- Designed to support scalable, interactive features for content creators  
+Twitch: [https://www.twitch.tv/waterkatdev](https://www.twitch.tv/waterkatdev)
 
-<!--📂 [`/docs`](https://github.com/WaterKat/AonyxEngine/tree/main/docs) – OpenAPI docs, architecture notes, and CI/CD pipeline details (in progress)
--->
----
-
-## 🧩 Other Projects
-
-### 🗣️ AonyxBuddy
-> A TypeScript-based plugin for StreamElements that adds speech and event-reactive overlays to Twitch streams.
-
-- Speech synthesis synced with overlay animations  
-- Real-time reactions to Twitch chat, subs, and commands  
-- Packaged via Webpack for widget compatibility
-
-### 🔌 End-to-End IoT System
-> Group project simulating IoT communication and metrics collection.
-
-- Python + socket programming  
-- MongoDB for real-time metric persistence  
-- Simulated appliance data & analytics endpoints
+Website: [https://jvallecillo.aonyxlimited.com/](https://jvallecillo.aonyxlimited.com/)
 
 ---
 
-## 🎯 What Sets Me Apart
+## Tech
 
-My background in **game development** taught me how to build interactive systems that respond in real time. Now, I apply that same thinking to backend development — especially for the **streaming and creator ecosystem**, where performance, state sync, and API responsiveness are critical.
+In order of comfort
 
-I love collaborating with streamers and devs to make tools that are as fun as they are functional.
+### Languages
+
+* TypeScript / JavaScript / ECMA Script ( Node.js / Bun / Web )
+* C# ( Unity3D )
+* SQL ( SQLite / PostgreSQL )
+* Bash ( Linux / Scripting )
+* Python ( Academic / Arduino / PyTorch )
+* C / C++ ( Academic / Arduino )
+* Rust ( Tauri )
+
+### Runtimes / Platforms
+
+* Node.js / Npm
+* Unity3D
+* Bun ( js )
+* Tauri
+
+### Frameworks / Libraries
+
+* Express.js
+* React ( not a framework )
+
+### Databases
+
+#### Direct
+
+    * SQLite
+    * PostgreSQL  
+    
+#### Service
+
+    * Supabase
+    * MongoDB
+    * DynamoDB
+
+### Apis
+
+* VTubeStudio
+* StreamElements ( Widgets )
+* Twitch API
+* Discord API
+
+### Tools
+
+* Docker
+* Git
+* VSCode
 
 ---
 
-## 📍 Open to Work – Long Beach, CA
-```On Site / Hybrid / Remote ```
+## Projects
 
-I’m looking for a **full-time backend developer** role where I can contribute to real-time platforms, creator tools, or scalable service architectures.
+### AonyxBuddy
+
+AonyxBuddy is an event based character animation / chat interaction tool.
+It condenses chat messages, twitch events, and inputs to animate a character and response with text to speech.
+
+This has evolved from a StreamElements widget to a larger desktop application. Because the code is a mess of old and new code, once I'm comfortable enough to post it It will likely go here.
+
+If you've seen this AonyxBuddy from Twitch and are interested in testing it, feel free to send me an email.
+
+## Open to Work – Los Angeles / Orange County
+
+```On Site / Hybrid / Remote```
+
+I’m looking for a **software engineering / development** role.
+
+I can drive, commutes up to an hour are fine.
+
+My preference would be in content creation, however I believe I have a good foundation that would allow me to learn / expand in many fields, like backend development or integrated programming.
 
 ---
-
