@@ -1,100 +1,39 @@
-# Jacob Vallecillo, also known as WaterKat
+# Jacob Vallecillo
 
-## Software Engineer
+### Software Engineer | TypeScript, C++, and event-driven systems
 
-I build tools for content creators.
+I am a software engineer and Computer Science graduate from California State University, Long Beach. I started programming by making games, and my work has since expanded into event-driven runtimes, real-time integrations, networking, and developer tooling.
 
-Email: <jvallecillo.dev@gmail.com>
+I enjoy working on the parts of software where several systems have to behave as one: lifecycle management, asynchronous work, data boundaries, error handling, and testable integration points.
 
-GitHub (you're here): [https://github.com/WaterKat](https://github.com/WaterKat)
+## Current focus
 
-LinkedIn: [https://www.linkedin.com/in/jivallecillo/](https://www.linkedin.com/in/jacobvallecillo)
+### [Plugin Runtime](https://github.com/aonyxlimited/plugin-runtime/tree/stable)
 
-## Content Creation
-
-I share my efforts on Twitch, or on my website
-
-Twitch: [https://www.twitch.tv/waterkatdev](https://www.twitch.tv/waterkatdev)
-
-Website: [https://jvallecillo.aonyxlimited.com/](https://jvallecillo.aonyxlimited.com/)
-
----
-
-## Open to Work – Los Angeles / Orange County
-
-```On Site / Hybrid / Remote```
-
-I’m looking for a **software engineering / development** role.
-
-I can drive, commutes up to an hour are fine.
-
-My preference would be in content creation, however I believe I have a good foundation that would allow me to learn / expand in many fields, like backend development or integrated programming.
-
----
-
-## Projects
+An agnostic TypeScript runtime being extracted from AonyxBuddy. It focuses on plugin registration, explicit lifecycle transitions, ordered event delivery, dependency injection, and rollback-aware failure handling. My current goal is to turn it into a compact, headless, and deterministic public example of my systems work.
 
 ### AonyxBuddy
 
-AonyxBuddy is an event based character animation / chat interaction tool.
-It condenses chat messages, twitch events, and inputs to animate a character and response with text to speech.
+A desktop-hosted livestream assistant that connects chat and stream events to filtering, response generation, speech, audio playback, and avatar behavior. The project has been the testing ground for much of my work with TypeScript, asynchronous providers, Web Audio, external APIs, and runtime design.
 
-This has evolved from a StreamElements widget to a larger desktop application. Because the code is a mess of old and new code, once I'm comfortable enough to post it It will likely go here.
+The project's earlier, browser-based version is available as the [AonyxBuddy StreamElements widget](https://github.com/WaterKat/aonyxbuddy-widget).
 
-If you've seen this AonyxBuddy from Twitch and are interested in testing it, feel free to send me an email.
+### C++ multiplayer networking
 
----
+I contribute to a collaborative C++23 multiplayer project, primarily in its shared networking and systems code. My work includes asynchronous UDP communication with Boost.Asio, binary serialization, typed event and request routing, thread-safe handoff between network I/O and the server update loop, and CMake/vcpkg build tooling.
 
-## Tech
+## Games and earlier work
 
-In order of comfort
+Games are how I learned to program. My [itch.io page](https://waterkat.itch.io/) includes playable Unity projects from personal work, academic teams, and game jams. That history still shapes how I approach software: build a complete loop, test it through use, and keep improving the underlying system.
 
-### Languages
+## Tools I use
 
-* TypeScript / JavaScript / ECMA Script ( Node.js / Bun / Web )
-* C# ( Unity3D )
-* SQL ( SQLite / PostgreSQL )
-* Bash ( Linux / Scripting )
-* Python ( Academic / Arduino / PyTorch )
-* C / C++ ( Academic / Arduino )
-* Rust ( Tauri )
+Most of my current work uses **TypeScript, Bun/Node.js, C++23, CMake, and Git**. I also have experience with **C#, Unity, Python, SQL, React, Tauri, Docker, Linux, and GitHub Actions**.
 
-### Runtimes / Platforms
+## What I am looking for
 
-* Node.js / Npm
-* Unity3D
-* Bun ( js )
-* Tauri
+I am looking for an early-career software engineering role where I can contribute to real systems, learn from experienced engineers, and take ownership of well-defined problems. I am especially interested in backend, systems, integrations, developer tooling, and interactive software.
 
-### Frameworks / Libraries
+Based in Southern California and open to on-site, hybrid, or remote work.
 
-* Express.js
-* React ( not a framework )
-
-### Databases
-
-#### Direct
-
-    * SQLite
-    * PostgreSQL  
-    
-#### Service
-
-    * Supabase
-    * MongoDB
-    * DynamoDB
-
-### Apis
-
-* VTubeStudio
-* StreamElements ( Widgets )
-* Twitch API
-* Discord API
-
-### Tools
-
-* Docker
-* Git
-* VSCode
-
----
+[LinkedIn](https://www.linkedin.com/in/jivallecillo/) Â· [itch.io](https://waterkat.itch.io/) Â· [Email](mailto:jvallecillo.dev@gmail.com)
